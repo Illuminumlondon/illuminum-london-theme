@@ -1,0 +1,53 @@
+{% comment %}
+	This global theme block, 'IL Collab Content 2', is designed for use within the `IL-about-collaboration.liquid`
+  	section as a nested block.
+  	Use nesting blocks to add different types of content:
+  	- il-collab-item-content-2-person
+  	- il-collab-item-content-2-image
+  	- il-collab-item-content-2-text
+{% endcomment %}
+
+{% liquid
+	assign margin_bottom = block.settings.margin_bottom | append: 'px'
+	assign three_blocks = false
+	if block.blocks.size == 3
+		assign three_blocks = true
+	endif
+%}
+
+<style>
+    @media screen and (min-width: 992px) {
+        #shopify-block-{{ block.id }} > .item-content-2 {
+            margin-bottom: {{ margin_bottom }}
+        }
+    }
+</style>
+
+<div class="item-content-2 grid-container{% if three_blocks %} three-blocks{% endif %} {{ content_sequence }}">
+	{% content_for 'blocks' %}
+</div>
+
+{% schema %}
+{
+  "name": "IL Collab Content 2",
+  "settings": [
+    {
+      "type": "number",
+      "id": "margin_bottom",
+      "label": "Margin bottom (desktop)",
+      "default": 0,
+      "info": "Default: 65 - between similar blocks, 0 - for the last one."
+    }
+  ],
+  "blocks": [
+		{ "type": "il-collab-item-content-2-person" },
+		{ "type": "il-collab-item-content-2-image" },
+		{ "type": "il-collab-item-content-2-text" }
+	],
+  "presets": [
+    {
+			"name": "IL Collab Content 2"
+		}
+  ]
+}
+{% endschema %}

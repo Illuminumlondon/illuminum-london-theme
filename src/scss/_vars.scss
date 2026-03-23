@@ -1,0 +1,25 @@
+/*>>> THEME COLORS <<<*/
+
+$text-color-black: #0c0c0c;
+$text-color-black-2: #242323;
+$text-color-gray: #6a6a6a;
+$stroke-color: #a9a9a9;
+$text-white: #e6e6e6;
+$gray-fill: #eaeaea;
+
+/*>>> FONTS <<<*/
+
+$font-family: "Inter", sans-serif;
+$second-family: "Outfit", sans-serif;
+$third-family: "Roboto", sans-serif;
+
+
+/*>>> BREAKPOINTS <<<*/
+
+$breakpoints: (
+  xxl: 1400px,
+  xl: 1200px,
+  lg: 992px,
+  md: 768px,
+  sm: 576px
+);

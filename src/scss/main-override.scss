@@ -1,0 +1,337 @@
+@import '_vars';
+@import '_mixins';
+
+h1,
+.h1.h1,
+.text-block.h1 > *,
+.heading-1,
+.heading-1 * {
+  @include heading-1;
+}
+
+h2,
+.h2.h2,
+.text-block.h2 > *,
+.heading-2,
+.heading-2 * {
+  @include heading-2;
+}
+
+h3,
+.h3,
+.h3.h3,
+.text-block.h3 > *,
+.heading-3,
+.heading-3 * {
+  @include heading-3;
+}
+
+h4,
+.h4,
+.h4.h4,
+.text-block.h4 > *,
+.heading-4,
+.heading-4 * {
+  @include heading-4;
+}
+
+h5,
+.h5.h5,
+.text-block.h5 > *,
+.heading-5,
+.heading-5 * {
+  @include heading-5;
+}
+
+.menu-link,
+.menu-link * {
+  @include menu-link;
+}
+
+.link-item,
+.link-item * {
+  @include link-item;
+}
+
+.link-item-hovered,
+.link-item-hovered * {
+  @include link-item-hovered;
+}
+
+.regular-text,
+.regular-text * {
+  @include regular-text;
+}
+
+.caption-1,
+.caption-1 * {
+  @include caption-1;
+}
+
+.caption-2,
+.caption-2 * {
+  @include caption-2;
+}
+
+.caption-3,
+.caption-3 * {
+  @include caption-3;
+}
+
+.text-medium-20,
+.text-medium-20 * {
+  @include text-medium-20;
+}
+
+.text-light,
+.text-light * {
+  @include text-light;
+}
+
+.text-light-2,
+.text-light-2 * {
+  @include text-light-2;
+}
+
+.for-desktop {
+  @media screen and (max-width: 767px) {
+    display: none !important;
+  }
+}
+
+.for-mobile {
+  @media screen and (min-width: 768px) {
+    display: none !important;
+  }
+}
+
+// Class generation for mobile-only (visible on mobile, hidden on desktop)
+.mobile-only {
+  display: block !important; // Base style for mobile
+
+  &--sm {
+    @include hide-on-desktop(sm); // Hide on screens ≥576px
+  }
+
+  &--md {
+    @include hide-on-desktop(md); // Hide on screens ≥768px
+  }
+
+  &--lg {
+    @include hide-on-desktop(lg); // Hide on screens ≥992px
+  }
+}
+
+// Class generation for desktop-only (visible on desktop, hidden on mobile)
+.desktop-only {
+  display: block !important; // Base style for desktop
+
+  &--sm {
+    @include hide-on-mobile(sm); // Hide on screens <576px
+  }
+
+  &--md {
+    @include hide-on-mobile(md); // Hide on screens <768px
+  }
+
+  &--lg {
+    @include hide-on-mobile(lg); // Hide on screens <992px
+  }
+}
+
+.hidden {
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+/* Privacy policy pages style */
+
+rte-formatter {
+  padding-block: 0 !important;
+}
+
+.shopify-policy__container {
+  max-width: 100%!important;
+  padding: 0 30px!important;
+
+  @include media-max(lg) {
+    padding: 0 20px!important;
+  }
+}
+
+.rte {
+  width: 100%;
+  padding-top: 227px;
+  padding-bottom: 200px;
+  max-width: 1440px!important;
+  display: flex;
+  column-gap: 30px;
+  margin: 0 auto;
+
+  @include media-max(lg) {
+    padding-top: 192px;
+    padding-bottom: 80px;
+    flex-direction: column;
+    row-gap: 30px;
+  }
+
+  & > div {
+    width: 100%;
+  }
+
+  .left {
+    & > p {
+      width: 100%;
+      max-width: 440px;
+
+      @include media-max(lg) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+
+    @include media-max(lg) {
+      row-gap: 30px;
+    }
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+
+    @include media-max(xl) {
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    @include media-max(lg) {
+      row-gap: 10px;
+    }
+
+    .title {
+      min-width: 150px;
+      flex: 1;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 440px;
+
+      @include media-max(xl) {
+        max-width: 100%;
+      }
+
+      ul, ol {
+        margin: 0 0 10px 0;
+      }
+    }
+  }
+
+  :is(h4, h5, h6) {
+    @include regular-text ($color: #000);
+  }
+
+  :is(p, ul, ol, li) {
+    @include regular-text ($color: #000);
+  }
+
+  :is(ul, ol) {
+    padding: 0 0 0 18px;
+
+    @media screen and (width >= 750px) {
+      padding: 0 0 0 27px;
+    }
+  }
+
+  ol {
+    list-style: none;
+    padding-left: 0;
+    counter-reset: item;
+
+    li {
+      padding-left: 27px;
+      position: relative;
+      counter-increment: item;
+
+      &::before {
+        content: counter(item) '.';
+        position: absolute;
+        left: 10px;
+        width: 1.5em;
+        text-align: left;
+      }
+    }
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: #000;
+  }
+}
+
+[data-template="page.informational-page"] {
+  :is(h1) {
+    @include heading-3;
+    text-transform: uppercase;
+  }
+
+  :is(h1):first-child {
+    margin: 0 0 20px 0;
+
+    @include media-max(lg) {
+      margin: 0 0 40px 0;
+    }
+  }
+
+  :is(h2) {
+    text-transform: uppercase;
+    @include heading-5;
+    margin: 0 !important;
+  }
+}
+
+.shopify-policy__title {
+  display: none;
+}
+
+.shopify-policy__body {
+  :is(h1, h2) {
+    @include heading-3;
+    text-transform: uppercase;
+  }
+
+  :is(h1, h2):first-child {
+    margin: 0 0 20px 0;
+
+    @include media-max(lg) {
+      margin: 0 0 40px 0;
+    }
+  }
+
+  :is(h3) {
+    margin: 0;
+    text-transform: uppercase;
+    @include heading-5;
+  }
+}
+
+/* END Privacy policy pages style */
+
+header-component {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+}
+

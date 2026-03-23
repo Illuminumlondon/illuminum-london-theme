@@ -1,0 +1,205 @@
+{{ 'il-slider.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'il-slider-galary.js' | asset_url }}" type="module" defer></script>
+
+{% comment %} Preload media for first slide {% endcomment %}
+{% assign first_block = section.blocks.first %}
+{% if first_block.type == 'slide' %}
+	{% assign first_media_type = first_block.settings.media_type %}
+	
+	{% if first_media_type == 'image' %}
+		{% if first_block.settings.image != blank %}
+			<link rel="preload" href="{{ first_block.settings.image | img_url: 'master' }}" as="image">
+		{% endif %}
+		
+		{% if first_block.settings.image_mobile != blank %}
+			<link rel="preload" href="{{ first_block.settings.image_mobile | img_url: 'master' }}" as="image">
+		{% endif %}
+	{% endif %}
+{% endif %}
+
+<il-slider-gallery class="il-slider">
+  <div class="il-slider__flex">
+    <div class="il-slider__images">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+			{% for block in section.blocks %}
+				{% if block.type == 'slide' %}
+					{% liquid
+							assign product = block.settings.product
+							assign product_fragrance = product.metafields.custom.fragrance | upcase
+							
+							if block.settings.product_image != blank
+								assign product_image = block.settings.product_image
+							else
+								assign product_image = product.featured_image
+							endif
+							
+							assign media_type = block.settings.media_type | default: 'image'
+							
+							if media_type == 'image'
+								assign back_image = block.settings.image
+								assign back_image_mobile = block.settings.image_mobile
+							elsif media_type == 'video'
+								assign video = block.settings.video
+								assign video_mobile = block.settings.video_mobile
+								assign video_has_mob = false
+								
+								if block.settings.video_mobile != blank
+									assign video_has_mob = true
+								else
+									assign video_mobile = video
+								endif
+							endif
+					%}
+					<div class="swiper-slide">
+						<div class="il-slider__image">
+							{% if media_type == 'image' %}
+								<img src="{{ back_image | img_url: "master" }}" alt="{{ back_image.alt | default: product.title }}"/>
+								<img class="mobile" src="{{ back_image_mobile | img_url: "master" }}" alt="{{ back_image_mobile.alt | default: product.title }}"/>
+							{% elsif media_type == 'video' %}
+								{% if video_has_mob %}
+									{% assign mobile_poster = '' %}
+									{% if video_mobile.preview_image != blank %}
+										{% assign mobile_poster = video_mobile.preview_image | img_url: 'master' %}
+									{% endif %}
+									<div class="video-container mobile">
+										<video 
+											playsinline muted loop class="lazy-video" preload="none"
+											poster="{{ mobile_poster }}"
+											data-video-url="{% if video_mobile.sources[0] != blank %}{{ video_mobile.sources[0].url }}{% endif %}">
+										</video>
+									</div>
+								{% endif %}
+								{% assign desktop_poster = '' %}
+								{% if video.preview_image != blank %}
+									{% assign desktop_poster = video.preview_image | img_url: 'master' %}
+								{% endif %}
+								<div class="video-container">
+									<video 
+										playsinline muted loop class="lazy-video" preload="none"
+										poster="{{ desktop_poster }}"
+										data-video-url="{% if video.sources[0] != blank %}{{ video.sources[0].url }}{% endif %}">
+									</video>
+								</div>
+							{% endif %}
+						</div>
+						<div class="content">
+							<div class="text-wrapper">
+								<p class="product-edition">{{ product_fragrance }}</p>
+								<p class="product-name">{{ product.title }}</p>
+							</div>
+							<div class="product-card">
+								<div class="product-card__image">
+									<img src="{{ product_image | img_url: "master" }}" alt="{{ product_image.alt | default: product.title }}"/>
+								</div>
+								<div class="product-card__info">
+									<div class="product-card__product-info">
+										<p class="product-edition">{{ product_fragrance }}</p>
+										<p class="product-name">{{ product.title }}</p>
+									</div>
+									<div class="product-card__size text">{{ product.options_by_name['Size'].name | downcase }} {{ product.variants[0].options[0] | downcase }}</div>
+									<div class="product-card__price text">{{ product.price | money_without_trailing_zeros }}</div>
+								</div>
+								<a href="{{ product.url }}" class="product-card__link"></a>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+  </div>
+</il-slider-gallery>
+
+
+{% schema %}
+{
+  "name": "IL-Slider",
+  "class": "il-slider",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "blocks": [
+    {
+      "type": "slide",
+      "name": "Slide",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Media settings"
+        },
+        {
+          "type": "radio",
+          "id": "media_type",
+          "label": "Media type",
+          "options": [
+            {
+              "value": "image",
+              "label": "Image"
+            },
+            {
+              "value": "video",
+              "label": "Video"
+            }
+          ],
+          "default": "image",
+          "info": "Select the type of media to display for this slide"
+        },
+        {
+          "type": "header",
+          "content": "Images"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image Desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image Mobile"
+        },
+        {
+          "type": "header",
+          "content": "Videos"
+        },
+        {
+          "id": "video",
+          "type": "video",
+          "label": "Video Desktop"
+        },
+        {
+          "id": "video_mobile",
+          "type": "video",
+          "label": "Video Mobile"
+        },
+        {
+          "type": "header",
+          "content": "Product"
+        },
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product Image",
+          "info": "If not set, product's featured image will be used"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "IL-Slider",
+      "settings": {
+      }
+    }
+  ]
+}
+{% endschema %}

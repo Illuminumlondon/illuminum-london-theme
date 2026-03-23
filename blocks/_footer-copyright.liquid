@@ -1,0 +1,85 @@
+{{ 'block-footer-copyright.css' | asset_url | stylesheet_tag }}
+
+
+<div class="il-footer-utilities">
+  <div class="
+    footer-utilities__group-copyright
+    custom-typography
+    {% if block.settings.font_size != "" %}custom-font-size{% endif %}
+  "
+          style="{% render 'typography-style', preset: 'custom', settings: block.settings %}"
+          {{ block.shopify_attributes }}
+  >
+  <span class="footer-utilities__text">
+    &copy; {{ 'now' | date: '%Y' }}
+    ILLUMINUM london
+  </span>
+  </div>
+  <div class="footer-utilities__social-links">
+    <a href="https://www.facebook.com/illuminumfragrance/" target="_blank">facebook</a>
+    <a href="https://www.instagram.com/illuminum_london/" target="_blank">instagram</a>
+    <a href="https://www.tiktok.com/@illuminum.london" target="_blank">tiktok</a>
+    <a href="https://uk.pinterest.com/illuminumlondon/" target="_blank">pinterest</a>
+  </div>
+  <div class="footer-utilities__language-switcher">
+    {{ localization.country.name }} ({{ localization.country.currency.symbol }}) | {{ localization.language.endonym_name | capitalize }}
+  </div>
+</div>
+
+
+{% schema %}
+{
+  "name": "t:names.copyright",
+  "tag": null,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:content.copyright_info"
+    },
+    {
+      "type": "select",
+      "id": "font_size",
+      "label": "t:settings.size",
+      "options": [
+        {
+          "value": "0.625rem",
+          "label": "10px"
+        },
+        {
+          "value": "0.75rem",
+          "label": "12px"
+        },
+        {
+          "value": "0.875rem",
+          "label": "14px"
+        },
+        {
+          "value": "1rem",
+          "label": "16px"
+        },
+        {
+          "value": "1.125rem",
+          "label": "18px"
+        }
+      ],
+      "default": "0.75rem"
+    },
+    {
+      "type": "select",
+      "id": "case",
+      "label": "t:settings.case",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:options.default"
+        },
+        {
+          "value": "uppercase",
+          "label": "t:options.uppercase"
+        }
+      ],
+      "default": "none"
+    }
+  ]
+}
+{% endschema %}

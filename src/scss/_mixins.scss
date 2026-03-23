@@ -1,0 +1,179 @@
+@import '_vars';
+
+// Mixin for hiding on desktop (min-width)
+@mixin hide-on-desktop($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+  @if $value {
+    @media screen and (min-width: $value) {
+      display: none !important;
+    }
+  } @else {
+    @error "Breakpoint '#{$breakpoint}' not found in $breakpoints";
+  }
+}
+
+// Mixin for hiding on mobile (max-width)
+@mixin hide-on-mobile($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+  @if $value {
+    @media screen and (max-width: $value - 0.02px) {
+      display: none !important;
+    }
+  } @else {
+    @error "Breakpoint '#{$breakpoint}' not found in $breakpoints";
+  }
+}
+
+// Mixin for max-width media queries (with -0.02px)
+@mixin media-max($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+  @if $value {
+    @media screen and (max-width: $value - 0.02px) { // Example, 991.98px for lg
+      @content;
+    }
+  } @else {
+    @error "Breakpoint '#{$breakpoint}' not found in $breakpoints";
+  }
+}
+
+// Mixin for min-width media queries (exact value from breakpoints)
+@mixin media-min($breakpoint) {
+  $value: map-get($breakpoints, $breakpoint);
+  @if $value {
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @error "Breakpoint '#{$breakpoint}' not found in $breakpoints";
+  }
+}
+
+@mixin heading-1 {
+  font-family: $second-family;
+  font-weight: 400;
+  font-size: 96px;
+  line-height: 141%;
+  color: #000;
+}
+
+@mixin heading-2 {
+  font-family: $second-family;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 127%;
+  color: #000;
+}
+
+@mixin heading-3 {
+  font-family: $second-family;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 125%;
+  color: #000;
+}
+
+@mixin heading-4 {
+  font-family: $second-family;
+  font-weight: 400;
+  font-size: 24px;
+  color: $text-color-black;
+}
+
+@mixin heading-5 {
+  font-family: $second-family;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 143%;
+  color: #000;
+}
+
+@mixin menu-link {
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  color: #000;
+}
+
+@mixin link-item {
+  font-family: $font-family !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  line-height: 138% !important;
+  text-transform: uppercase !important;
+  color: #000;
+  transition: text-decoration 0.2s ease-in-out;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+@mixin link-item-hovered {
+  @include link-item;
+  &:hover,
+  &:focus,
+  &.active {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+}
+
+@mixin regular-text ($color: $text-color-black-2) {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 138%;
+  color: $color;
+}
+
+@mixin caption-1 {
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 140%;
+  color: #000;
+}
+
+@mixin caption-2 {
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  text-transform: uppercase;
+  color: #000;
+}
+
+@mixin caption-3 {
+  font-family: $font-family;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 142%;
+  color: #000;
+}
+
+@mixin text-medium-20 {
+  font-family: $font-family;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 140%;
+  text-align: center;
+  color: $text-color-black;
+}
+
+@mixin text-light {
+  font-family: $font-family;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 140%;
+  text-align: center;
+  color: $text-color-black-2;
+}
+
+@mixin text-light-2 {
+  font-family: $font-family;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 117%;
+  color: $text-color-black-2;
+}
