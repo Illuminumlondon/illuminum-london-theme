@@ -15,6 +15,7 @@
         "title": {
           "type": "text",
           "name": "t:names.title",
+          "disabled": true,
           "settings": {
             "text": "<h2>{{ closest.page.title }}</h2>",
             "width": "100%",
@@ -73,7 +74,7 @@
         "content_direction": "column",
         "gap": 32,
         "color_scheme": "",
-        "padding-block-start": 40,
+        "padding-block-start": 100,
         "padding-block-end": 0
       }
     },
