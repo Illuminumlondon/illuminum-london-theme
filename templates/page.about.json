@@ -43,8 +43,8 @@
       "name": "IL About hero",
       "settings": {
         "image": "shopify://shop_images/page04_1.png",
-        "title": "ILLUMINUM BRINGS ART TO THE WORLD OF PERFUME",
-        "subtext": "We create fragrances that inspire minds and stimulate emotions",
+        "title": "Illuminum London — British niche fragrance house",
+        "subtext": "Founded in 2011. Twelve fragrances built around specific raw materials — oud from Laos and Cambodia, Taif rose, Indonesian patchouli — are composed for character rather than crowd appeal.",
         "enable_margin_desktop": true,
         "margin_top_desktop": 0,
         "margin_bottom_desktop": 185,
@@ -53,14 +53,21 @@
         "margin_bottom_mobile": 0
       }
     },
+    "scroll_to_top_3KA6xh": {
+      "type": "scroll-to-top",
+      "name": "Scroll to Top",
+      "settings": {
+        "enable_scroll_to_top": true
+      }
+    },
     "il_about_brand_p8NpnG": {
       "type": "IL-about-brand",
       "name": "IL About Brand",
       "settings": {
         "image_left": "shopify://shop_images/brand-1.jpg",
-        "title_left": "THE NEW ART OF SELF-EXPRESSION",
+        "title_left": "A NICHE HOUSE, NOT A BRAND",
         "image_right": "shopify://shop_images/brand-2.jpg",
-        "title_right": "Founded in 2011, Illuminum is a British fine fragrance collection that views scent as an open-ended adventure in&nbsp;self-expression",
+        "title_right": "Founded in London in 2011, Illuminum is an independent British fragrance house — twelve fragrances, each built around a specific raw material with a clear source.",
         "enable_margin_desktop": true,
         "margin_top_desktop": 0,
         "margin_bottom_desktop": 200,
@@ -89,8 +96,8 @@
           "type": "content_banner",
           "settings": {
             "content_sequence": "text_image",
-            "banner_title": "Where Scent Meets Imagination",
-            "banner_text": "Fluid, transcendent, playful and inspirational, Illuminum opens a window on a new horizon of human possibility at the point where scent interacts with creativity. We’ve taken our passion for perfume into exciting areas of shared experience, including the worlds of art and culture",
+            "banner_title": "Independence",
+            "banner_text": "No licensing partner, no conglomerate ownership, no fashion brand identity to serve. The decisions that define a fragrance — which raw materials to use, how much to spend on the formula, what to leave out — are made internally and without external brief.",
             "banner_image": "shopify://shop_images/principles.jpg",
             "raise_image_up": false,
             "raise_image_up_percent": 0
@@ -107,8 +114,8 @@
           "type": "content_banner",
           "settings": {
             "content_sequence": "image_text",
-            "banner_title": "Fragrance as a Creative Force",
-            "banner_text": "Science already recognises the unique ability of scent to release in us the power and potential of emotion and imagination. There’s much more to discover. That’s why Illuminum collaborates with leading artists in exploring the role and value of fragrance as a creative medium. For us, fragrance is an art form in its own right",
+            "banner_title": "Formula first",
+            "banner_text": "The fragrance formula is the product. Packaging, copy, and the brand story exist to support the composition, not the other way round. If a formula requires a more expensive source of oud, that is the source used.",
             "banner_image": "shopify://shop_images/pr-2_6f5a6ece-d44d-4e20-93ca-f755e8b52261.jpg",
             "raise_image_up": false,
             "raise_image_up_percent": 0
@@ -118,8 +125,8 @@
           "type": "content_banner",
           "settings": {
             "content_sequence": "text_image",
-            "banner_title": "Your Story, Your Scent",
-            "banner_text": "Our goal is to make you the author of your own meaningful encounter with fragrance. It means less mystery, more revelation.After all, as our name suggests, we’re about letting in the light",
+            "banner_title": "Specialist distribution",
+            "banner_text": "Illuminum is sold directly through illuminum.london and through specialist retailers that take fragrance seriously — independent perfumeries and curated niche platforms, not department store counters.",
             "banner_image": "shopify://shop_images/Rectangle_151.png",
             "raise_image_up": true,
             "raise_image_up_percent": 54
@@ -134,7 +141,7 @@
       ],
       "name": "IL About Principles",
       "settings": {
-        "title": "Illuminum: Where Perfume Becomes Expression",
+        "title": "What makes Illuminum a niche house",
         "enable_margin_desktop": true,
         "margin_top_desktop": 100,
         "margin_bottom_desktop": 150,
@@ -905,13 +912,6 @@
         "enable_margin_mobile": true,
         "margin_top_mobile": 0,
         "margin_bottom_mobile": 100
-      }
-    },
-    "scroll_to_top_3KA6xh": {
-      "type": "scroll-to-top",
-      "name": "Scroll to Top",
-      "settings": {
-        "enable_scroll_to_top": true
       }
     }
   },
