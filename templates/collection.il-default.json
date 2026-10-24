@@ -41,6 +41,20 @@
         "padding-block-end": 0
       }
     },
+    "il_text_message_J3NbgH": {
+      "type": "IL-text-message",
+      "name": "IL Text Message",
+      "settings": {
+        "title": "Twelve eaux de parfum, made in London",
+        "subtext": "<p>The Core Range is the whole of Illuminum: ouds from Laos, Cambodia and Malaysia, Taif and Moroccan rose, leather cut with black pepper, Virginian tobacco, and White Gardenia Petals, the floral the house is known for. Each is a 100ml Eau de Parfum. Start with the family you already wear, or with the note you have never tried.</p>",
+        "enable_margin_desktop": false,
+        "margin_top_desktop": 0,
+        "margin_bottom_desktop": 16,
+        "enable_margin_mobile": false,
+        "margin_top_mobile": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
     "main": {
       "type": "main-collection",
       "blocks": {
@@ -381,6 +395,7 @@
   },
   "order": [
     "section",
+    "il_text_message_J3NbgH",
     "main",
     "il_subscriptions_kRn4Up"
   ]
