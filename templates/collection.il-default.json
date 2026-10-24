@@ -370,6 +370,7 @@
         },
         "il_text_with_link": {
           "type": "il-text-with-link",
+          "disabled": true,
           "static": true,
           "settings": {
             "heading": "Illuminum wrapping service",
