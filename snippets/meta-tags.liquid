@@ -108,10 +108,13 @@
   {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
 </title>
 
-<link
-  rel="canonical"
-  href="{{ canonical_url }}"
->
+
+  {%- if request.page_type == 'collection' and collection.handle == 'all' -%}
+  <link rel="canonical" href="{{ shop.url }}/collections/the-core-range">
+{%- else -%}
+  <link rel="canonical" href="{{ canonical_url }}">
+{%- endif -%}
+
 
 {% if page_description %}
   <meta
