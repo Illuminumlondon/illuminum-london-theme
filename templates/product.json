@@ -215,6 +215,7 @@
               "blocks": {
                 "accordion_row_NdBezV": {
                   "type": "_accordion-row",
+                  "disabled": true,
                   "settings": {
                     "heading": "Ingredients",
                     "open_by_default": false
