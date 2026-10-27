@@ -396,64 +396,6 @@
         "margin_bottom_mobile": 49
       }
     },
-    "il_subscriptions_YfjyaQ": {
-      "type": "IL-subscriptions",
-      "blocks": {
-        "email_signup": {
-          "type": "email-signup",
-          "static": true,
-          "settings": {
-            "heading": "Stay in the know",
-            "heading_font_style": "heading_3",
-            "description": "Receive personalized email updates, launch annoucement, and exclusive access based on your interests.",
-            "description_font_style": "regular_text",
-            "privacy_text": "<p>This site is protected by hCAPTHA and its <a href=\"https://www.hcaptcha.com/privacy\" target=\"_blank\" title=\"https://www.hcaptcha.com/privacy\">Privacy Policy</a> and <a href=\"https://www.hcaptcha.com/terms\" target=\"_blank\" title=\"https://www.hcaptcha.com/terms\">Terms of Service</a> apply.</p>",
-            "privacy_text_font_style": "caption_1",
-            "width": "custom",
-            "custom_width": 9,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border_style": "all",
-            "border_width": 0.5,
-            "border_radius": 0,
-            "input_type_preset": "paragraph",
-            "style_class": "button",
-            "display_type": "text",
-            "label": "Subscribe",
-            "integrated_button": false,
-            "button_type_preset": "paragraph",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "il_text_with_link": {
-          "type": "il-text-with-link",
-          "disabled": true,
-          "static": true,
-          "settings": {
-            "heading": "Illuminum wrapping service",
-            "heading_font_style": "heading_3",
-            "description": "For every order placed on Illuminum you can select a gift box",
-            "description_font_style": "regular_text",
-            "button_text": "DISCOVER GIFTING OPTIONS",
-            "button_link": "shopify://collections"
-          },
-          "blocks": {}
-        }
-      },
-      "name": "IL Subscriptions",
-      "settings": {
-        "enable_margin_desktop": true,
-        "margin_top_desktop": 125,
-        "margin_bottom_desktop": 132,
-        "enable_margin_mobile": true,
-        "margin_top_mobile": 49,
-        "margin_bottom_mobile": 75
-      }
-    },
     "product_recommendations_qnzPkn": {
       "type": "product-recommendations",
       "blocks": {
@@ -540,6 +482,64 @@
         "enable_margin_mobile": true,
         "margin_top_mobile": 75,
         "margin_bottom_mobile": 150
+      }
+    },
+    "il_subscriptions_YfjyaQ": {
+      "type": "IL-subscriptions",
+      "blocks": {
+        "email_signup": {
+          "type": "email-signup",
+          "static": true,
+          "settings": {
+            "heading": "Stay in the know",
+            "heading_font_style": "heading_3",
+            "description": "Receive personalized email updates, launch annoucement, and exclusive access based on your interests.",
+            "description_font_style": "regular_text",
+            "privacy_text": "<p>This site is protected by hCAPTHA and its <a href=\"https://www.hcaptcha.com/privacy\" target=\"_blank\" title=\"https://www.hcaptcha.com/privacy\">Privacy Policy</a> and <a href=\"https://www.hcaptcha.com/terms\" target=\"_blank\" title=\"https://www.hcaptcha.com/terms\">Terms of Service</a> apply.</p>",
+            "privacy_text_font_style": "caption_1",
+            "width": "custom",
+            "custom_width": 9,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "border_style": "all",
+            "border_width": 0.5,
+            "border_radius": 0,
+            "input_type_preset": "paragraph",
+            "style_class": "button",
+            "display_type": "text",
+            "label": "Subscribe",
+            "integrated_button": false,
+            "button_type_preset": "paragraph",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "il_text_with_link": {
+          "type": "il-text-with-link",
+          "disabled": true,
+          "static": true,
+          "settings": {
+            "heading": "Illuminum wrapping service",
+            "heading_font_style": "heading_3",
+            "description": "For every order placed on Illuminum you can select a gift box",
+            "description_font_style": "regular_text",
+            "button_text": "DISCOVER GIFTING OPTIONS",
+            "button_link": "shopify://collections"
+          },
+          "blocks": {}
+        }
+      },
+      "name": "IL Subscriptions",
+      "settings": {
+        "enable_margin_desktop": true,
+        "margin_top_desktop": 125,
+        "margin_bottom_desktop": 132,
+        "enable_margin_mobile": true,
+        "margin_top_mobile": 49,
+        "margin_bottom_mobile": 75
       }
     },
     "section_RLwzWL": {
@@ -875,8 +875,8 @@
     "scroll_to_top_VQcp7Y",
     "il_interactive_notes_EzgEhA",
     "il_text_message_NzPhMN",
-    "il_subscriptions_YfjyaQ",
     "product_recommendations_qnzPkn",
+    "il_subscriptions_YfjyaQ",
     "section_RLwzWL",
     "section_xgMN8V"
   ]
