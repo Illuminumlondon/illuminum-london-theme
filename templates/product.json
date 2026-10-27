@@ -342,20 +342,6 @@
         "enable_scroll_to_top": true
       }
     },
-    "il_text_message_NzPhMN": {
-      "type": "IL-text-message",
-      "name": "IL Text Message",
-      "settings": {
-        "title": "The Core Range",
-        "subtext": "<p>Illuminum London was founded in 2011 as an independent British fragrance house. <a href=\"https://www.illuminum.london/collections/the-core-range\" title=\"https://www.illuminum.london/collections/the-core-range\">The Core Range</a> is twelve unisex eaux de parfum, each 100ml: ouds from Laos, Cambodia and Malaysia, Taif and Moroccan rose, leather, tobacco, tea and White Gardenia Petals. Formula first, the name and the bottle follow.</p>",
-        "enable_margin_desktop": true,
-        "margin_top_desktop": 150,
-        "margin_bottom_desktop": 125,
-        "enable_margin_mobile": true,
-        "margin_top_mobile": 52,
-        "margin_bottom_mobile": 49
-      }
-    },
     "il_interactive_notes_EzgEhA": {
       "type": "IL-interactive-notes",
       "blocks": {
@@ -394,6 +380,20 @@
         "enable_margin_mobile": true,
         "margin_top_mobile": 49,
         "margin_bottom_mobile": 62
+      }
+    },
+    "il_text_message_NzPhMN": {
+      "type": "IL-text-message",
+      "name": "IL Text Message",
+      "settings": {
+        "title": "The Core Range",
+        "subtext": "<p>Illuminum London was founded in 2011 as an independent British fragrance house. <a href=\"https://www.illuminum.london/collections/the-core-range\" title=\"https://www.illuminum.london/collections/the-core-range\">The Core Range</a> is twelve unisex eaux de parfum, each 100ml: ouds from Laos, Cambodia and Malaysia, Taif and Moroccan rose, leather, tobacco, tea and White Gardenia Petals. Formula first, the name and the bottle follow.</p>",
+        "enable_margin_desktop": true,
+        "margin_top_desktop": 150,
+        "margin_bottom_desktop": 125,
+        "enable_margin_mobile": true,
+        "margin_top_mobile": 52,
+        "margin_bottom_mobile": 49
       }
     },
     "il_subscriptions_YfjyaQ": {
@@ -873,8 +873,8 @@
   "order": [
     "main",
     "scroll_to_top_VQcp7Y",
-    "il_text_message_NzPhMN",
     "il_interactive_notes_EzgEhA",
+    "il_text_message_NzPhMN",
     "il_subscriptions_YfjyaQ",
     "product_recommendations_qnzPkn",
     "section_RLwzWL",
