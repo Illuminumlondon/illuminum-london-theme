@@ -346,8 +346,8 @@
       "type": "IL-text-message",
       "name": "IL Text Message",
       "settings": {
-        "title": "Overview of the collection",
-        "subtext": "<p>Our new scents expand on the success of our Vaporizer and Haute Perfume lines, keeping the same focus on quality and luxury using the best, ethically sourced ingredients. Now, sustainability and inclusivity are also key.</p>",
+        "title": "The Core Range",
+        "subtext": "<p>Illuminum London was founded in 2011 as an independent British fragrance house. <a href=\"https://www.illuminum.london/collections/the-core-range\" title=\"https://www.illuminum.london/collections/the-core-range\">The Core Range</a> is twelve unisex eaux de parfum, each 100ml: ouds from Laos, Cambodia and Malaysia, Taif and Moroccan rose, leather, tobacco, tea and White Gardenia Petals. Formula first, the name and the bottle follow.</p>",
         "enable_margin_desktop": true,
         "margin_top_desktop": 150,
         "margin_bottom_desktop": 125,
